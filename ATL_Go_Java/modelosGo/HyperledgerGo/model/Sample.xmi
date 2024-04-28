@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hyperledgerGo:SmartContract xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hyperledgerGo="http://www.example.org/hyperledgerGo" xsi:schemaLocation="http://www.example.org/hyperledgerGo hyperledgerGo.ecore" xmi:id="a1" SCName="EHR">
+  <functions xsi:type="hyperledgerGo:Function" xmi:id="a2" Name="CREATE"/>
+</hyperledgerGo:SmartContract>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hyperledgerGo:SmartContract
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:hyperledgerGo="http://www.example.org/hyperledgerGo"
+    xsi:schemaLocation="http://www.example.org/hyperledgerGo hyperledgerGo.ecore"
+    SCName="contractEhr"
+    fileName="ehr">
+  <packages
+      Name="main"/>
+  <structs Name="EHRContract">
+    <variables
+        Name="contractapi.Contract"
+        isAnonym="true"/>
+  </structs>
+  <structs Name="Patient">
+    <variables
+        Name="ID">
+      <tags
+          Name="json:&quot;ID&quot;"/>
+    </variables>
+    <variables
+        Name="Name">
+      <tags
+          Name="json:&quot;name&quot;"/>
+    </variables>
+  </structs>
+  <functions
+      Name="CreatePatient"
+      ReturnType="error">
+    <parameters
+        Name="ctx"
+        Type="contractapi.TransactionContextInterface"/>
+    <parameters
+        Name="patientID"/>
+    <parameters
+        Name="name"/>
+    <typefunction
+        VarName="ec"
+        StructName="EHRContract"/>
+  </functions>
+  <functions
+      Name="PatientExists"
+      ReturnType="bool, error">
+    <parameters
+        Name="ctx"
+        Type="contractapi.TransactionContextInterface"/>
+    <parameters
+        Name="patientID"/>
+    <typefunction
+        VarName="ec"
+        StructName="EHRContract"/>
+  </functions>
+  <functions
+      Name="UpdatePatient"
+      ReturnType="error">
+    <parameters
+        Name="ctx"
+        Type="contractapi.TransactionContextInterface"/>
+    <parameters
+        Name="patientID"/>
+    <parameters
+        Name="name"/>
+    <typefunction
+        VarName="ec"
+        StructName="EHRContract"/>
+  </functions>
+  <functions
+      Name="DeletePatient"
+      ReturnType="error">
+    <parameters
+        Name="ctx"
+        Type="contractapi.TransactionContextInterface"/>
+    <parameters
+        Name="patientID"/>
+    <typefunction
+        VarName="ec"
+        StructName="EHRContract"/>
+  </functions>
+  <functions
+      Name="QueryPatient"
+      ReturnType="*Patient, error">
+    <parameters
+        Name="ctx"
+        Type="contractapi.TransactionContextInterface"/>
+    <parameters
+        Name="patientID"/>
+    <typefunction
+        VarName="ec"
+        StructName="EHRContract"/>
+  </functions>
+</hyperledgerGo:SmartContract>

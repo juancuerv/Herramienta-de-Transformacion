@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hyperledgerJava:Asset
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:hyperledgerJava="http://www.example.org/hyperledgerJava"
+    xsi:schemaLocation="http://www.example.org/hyperledgerJava hyperledgerJava.ecore"
+    Name="EHRAsset">
+  <properties
+      Name="name"/>
+  <properties
+      Name="data"
+      typeVariable="String[]"/>
+  <packages
+      Name="org.example"/>
+</hyperledgerJava:Asset>
