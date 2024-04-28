@@ -10,7 +10,7 @@ Este repositorio contiene archivos relacionados con la implementación de transf
 Para utilizar las transformaciones ATL y los modelos de ejemplo en este repositorio, sigue los siguientes pasos:
 
 Clona este repositorio en tu máquina local utilizando el comando:
-`git clone <URL_del_repositorio>`
+`git clone [<URL_del_repositorio>](https://github.com/juancuerv/Tesis.git)`
 
 1. Explora las carpetas "ATL_Go_Java", "modelosGo" y "modelosJava" para acceder a los archivos relevantes.
 2. Utiliza los archivos de transformación ATL en la carpeta "ATL_Go_Java" para realizar conversiones entre modelos Go y Java.
