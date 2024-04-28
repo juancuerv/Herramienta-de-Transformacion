@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/hyperledgerJava')]
+
+
+[template public generateElement(aSmartContract : SmartContract)]
+[comment @main/]
+[file (aSmartContract.name, false, 'UTF-8')]
+
+[/file]
+[/template]

@@ -1,0 +1,83 @@
+[comment encoding = UTF-8 /]
+[module generateAsset('http://www.example.org/hyperledgerJava')]
+
+
+[template public generateAsset(a1 : Asset)]
+[comment @main/]
+[file (a1.Name.concat('.java'), false, 'UTF-8')]
+[if (a1.packages.Name.oclIsUndefined())]package default;[else]package [a1.packages.Name/];[/if]
+
+import org.hyperledger.fabric.contract.annotation.Contract;
+import org.hyperledger.fabric.contract.annotation.DataType;
+import org.hyperledger.fabric.contract.annotation.Property;
+import org.json.JSONObject;
+[for (i: Import | a1.imports)]
+[generarImports(i)/]
+[/for]	
+
+@DataType()
+public class [a1.Name/]{
+
+[for (p: Property | a1.properties)]
+	[generarProperties(p)/]
+[/for]
+
+	public [a1.Name/](){
+	}
+
+[for (p: Property | a1.properties)]
+	[generarGetter(p)/]
+[/for]
+
+[for (p: Property | a1.properties)]
+	[generarSetter(p)/]
+[/for]
+
+	public String toJSONString() {
+		return new JSONObject(this).toString();
+	}
+
+	public static [a1.Name/] fromJSONString(String json) {
+		JSONObject jsonObject = new JSONObject(json);
+		[for (p: Property | a1.properties)]
+		[generarGetJSON(p)/]
+		[/for]
+	    [a1.Name/] asset = new [a1.Name/]();
+	    [for (p: Property | a1.properties)]
+		[generarSetAsset(p)/]
+		[/for]
+	    return asset;
+	}
+}
+[/file]
+[/template]
+
+[template public generarImports(gi : Import)]
+import [gi.Name/];
+[/template]
+
+[template public generarProperties(gp : Property)]
+@Property
+[gp.Visibility/] [gp.TypeVar/] [gp.Name/];
+[/template]
+
+[template public generarGetter(gp : Property)]
+public [gp.TypeVar/] get[gp.Name.toUpperFirst()/](){
+	return [gp.Name/];
+}
+[/template]
+
+[template public generarSetter(gp : Property)]
+public void set[gp.Name.toUpperFirst()/]([gp.TypeVar/] [gp.Name/]){
+	this.[gp.Name/] = [gp.Name/];
+}
+[/template]
+
+[template public generarGetJSON(gp : Property)]
+[if (gp.TypeVar.toString().contains('[]'))][gp.TypeVar/] [gp.Name/] = jsonObject.get[gp.TypeVar.toString().replace('\\[\\]', '')/]("[gp.Name/]");[else][gp.TypeVar/] [gp.Name/] = jsonObject.get[gp.TypeVar/]("[gp.Name/]");[/if]
+[/template]
+
+[template public generarSetAsset(gp : Property)]
+asset.set[gp.Name.toUpperFirst()/]([gp.Name/]);
+[/template]
+
