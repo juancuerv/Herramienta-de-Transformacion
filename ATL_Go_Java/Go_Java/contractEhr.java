@@ -29,61 +29,70 @@ public class contractEhr implements ContractInterface {
 	}
 	
 	@Transaction(intent = Transaction.TYPE.SUBMIT)
-	public void CreatePatient(Context ctx, String patientID, String name){
+	public void CreatePatient(Context ctx, String ID, String Name, String TypeId, int Phone, String Address, String Email, String ClinicalData){
 		
-		boolean exists = Patient(ctx, patientID  );
+		boolean exists = PatientExists(ctx,ID);
 		if (exists){
-			throw new RuntimeException("The asset "+ patientID  +" already exists");
+			throw new RuntimeException("The asset "+ID+" already exists");
 		}
 		Patient asset = new Patient();
-		asset.setID(patientID);
-		asset.setName(name);
+		asset.setID(ID);
+		asset.setName(Name);
+		asset.setTypeId(TypeId);
+		asset.setPhone(Phone);
+		asset.setAddress(Address);
+		asset.setEmail(Email);
+		asset.setClinicalData(ClinicalData);
 		
-		ctx.getStub().putState( patientID  , asset.toJSONString().getBytes(UTF_8));
+		ctx.getStub().putState(ID, asset.toJSONString().getBytes(UTF_8));
 	}
 
 	@Transaction(intent = Transaction.TYPE.EVALUATE)
-	public boolean PatientExists(Context ctx, String patientID){
+	public boolean PatientExists(Context ctx, String ID){
 		
-		byte [] buffer = ctx.GetStub().GetState( patientID );	
+		byte [] buffer = ctx.GetStub().GetState(ID);	
 		return (buffer != null && buffer.length > 0);
 	}
 
 	@Transaction(intent = Transaction.TYPE.SUBMIT)
-	public void UpdatePatient(Context ctx, String patientID, String name){
+	public void UpdatePatient(Context ctx, String ID, String ClinicalData){
 		
-		boolean exists = Patient(ctx, patientID  );
+		boolean exists = PatientExists(ctx,ID);
 		if (!exists){
-			throw new RuntimeException("The asset "+ patientID  +" does not exist");
+			throw new RuntimeException("The asset "+ID+" does not exist");
 		}
-		Patient asset = new Patient();
-		asset.setID(patientID);
-		asset.setName(name);
+		byte [] patientBytes = ctx.getStub().getState(ID);
+		if (patientBytes == null || patientBytes.length == 0){
+			throw new RuntimeException("The asset "+ID+" does not exist");
+		}
 		
-		ctx.getStub().putState( patientID  , asset.toJSONString().getBytes(UTF_8));
+		Patient patient = patient.fromJSONString(new String(patientBytes, UTF_8));    	
+		patient.setClinicalData(ClinicalData);
+		
+		ctx.getStub().putState(ID, patient.toJSONString().getBytes(UTF_8));
 	}
 
 	@Transaction(intent = Transaction.TYPE.SUBMIT)
-	public void DeletePatient(Context ctx, String patientID){
+	public void DeletePatient(Context ctx, String ID){
 		
-		boolean exists = DeletePatient(ctx, patientID );
+		boolean exists = PatientExists(ctx,ID);
 		if (!exists){
-			throw new RuntimeException("The asset "+ patientID +" does not exist");
+			throw new RuntimeException("The asset "+ID+" does not exist");
 		}
-		DeletePatient asset = new DeletePatient();
-		asset.setID(patientID);
+		Patient asset = new Patient();
+		asset.setID(ID);
 		
-		ctx.getStub().delState( patientID , asset.toJSONString().getBytes(UTF_8));
+		ctx.getStub().delState(ID, asset.toJSONString().getBytes(UTF_8));
 	}
 
 	@Transaction(intent = Transaction.TYPE.EVALUATE)
-	public Patient QueryPatient(Context ctx, String patientID){
+	public Patient ReadPatient(Context ctx, String ID){
 		
-		boolean exists = Patient(ctx, patientID );
+		boolean exists = PatientExists(ctx,ID);
 		if (!exists){
-			throw new RuntimeException("The asset "+ patientID +" does not exist");
+			throw new RuntimeException("The asset "+ID+" does not exist");
 		}
-		Patient asset = Patient.fromJSONString(new String(ctx.getStub().getState( patientID ),UTF_8));
+		Patient asset = Patient.fromJSONString(new String(ctx.getStub().getState(ID),UTF_8));
 		return asset;
 	}
 

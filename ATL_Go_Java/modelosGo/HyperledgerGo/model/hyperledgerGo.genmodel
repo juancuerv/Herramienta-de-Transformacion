@@ -40,7 +40,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hyperledgerGo.ecore#//Function/Instructions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/localvariables"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/typefunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/typefunctions"/>
     </genClasses>
     <genClasses ecoreClass="hyperledgerGo.ecore#//Import"/>
     <genClasses ecoreClass="hyperledgerGo.ecore#//Package"/>

@@ -4,7 +4,7 @@
     nsPrefix="hyperledgerGo">
   <eClassifiers xsi:type="ecore:EClass" name="SmartContract">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="SCName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="FileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" lowerBound="1"
         eType="#//Package" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
@@ -26,7 +26,7 @@
         eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="localvariables" upperBound="-1"
         eType="#//LocalVariable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typefunction" eType="#//TypeFunction"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typefunctions" eType="#//TypeFunction"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//ContractElement"/>
@@ -42,6 +42,11 @@
     <eLiterals name="bool" value="3"/>
     <eLiterals name="byte" value="4"/>
     <eLiterals name="contractapi.TransactionContextInterface" value="5"/>
+    <eLiterals name="rune" value="6"/>
+    <eLiterals name="int64" value="7"/>
+    <eLiterals name="float32" value="8"/>
+    <eLiterals name="[]int" value="9"/>
+    <eLiterals name="[]string" value="10"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tag">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -52,7 +57,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableStruct" eSuperTypes="#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnonym" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsAnonym" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tags" lowerBound="1" eType="#//Tag"
         containment="true"/>
   </eClassifiers>

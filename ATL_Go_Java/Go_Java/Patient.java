@@ -1,4 +1,4 @@
-package default;
+package org.example;
 
 import org.hyperledger.fabric.contract.annotation.Contract;
 import org.hyperledger.fabric.contract.annotation.DataType;
@@ -12,6 +12,16 @@ public class Patient{
 	public String ID;
 	@Property
 	public String Name;
+	@Property
+	public String TypeId;
+	@Property
+	public int Phone;
+	@Property
+	public String Address;
+	@Property
+	public String Email;
+	@Property
+	public String ClinicalData;
 
 	public Patient(){
 	}
@@ -22,12 +32,42 @@ public class Patient{
 	public String getName(){
 		return Name;
 	}
+	public String getTypeId(){
+		return TypeId;
+	}
+	public int getPhone(){
+		return Phone;
+	}
+	public String getAddress(){
+		return Address;
+	}
+	public String getEmail(){
+		return Email;
+	}
+	public String getClinicalData(){
+		return ClinicalData;
+	}
 
 	public void setID(String ID){
 		this.ID = ID;
 	}
 	public void setName(String Name){
 		this.Name = Name;
+	}
+	public void setTypeId(String TypeId){
+		this.TypeId = TypeId;
+	}
+	public void setPhone(int Phone){
+		this.Phone = Phone;
+	}
+	public void setAddress(String Address){
+		this.Address = Address;
+	}
+	public void setEmail(String Email){
+		this.Email = Email;
+	}
+	public void setClinicalData(String ClinicalData){
+		this.ClinicalData = ClinicalData;
 	}
 
 	public String toJSONString() {
@@ -38,9 +78,19 @@ public class Patient{
 		JSONObject jsonObject = new JSONObject(json);
 		String ID = jsonObject.getString("ID");
 		String Name = jsonObject.getString("Name");
+		String TypeId = jsonObject.getString("TypeId");
+		int Phone = jsonObject.getint("Phone");
+		String Address = jsonObject.getString("Address");
+		String Email = jsonObject.getString("Email");
+		String ClinicalData = jsonObject.getString("ClinicalData");
 	    Patient asset = new Patient();
 		asset.setID(ID);
 		asset.setName(Name);
+		asset.setTypeId(TypeId);
+		asset.setPhone(Phone);
+		asset.setAddress(Address);
+		asset.setEmail(Email);
+		asset.setClinicalData(ClinicalData);
 	    return asset;
 	}
 }

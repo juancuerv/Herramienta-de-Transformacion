@@ -6,13 +6,13 @@
     xmlns:hyperledgerGo="http://www.example.org/hyperledgerGo"
     xsi:schemaLocation="http://www.example.org/hyperledgerGo hyperledgerGo.ecore"
     SCName="contractEhr"
-    fileName="ehr">
+    FileName="ehr">
   <packages
       Name="main"/>
   <structs Name="EHRContract">
     <variables
         Name="contractapi.Contract"
-        isAnonym="true"/>
+        IsAnonym="true"/>
   </structs>
   <structs Name="Patient">
     <variables
@@ -25,6 +25,32 @@
       <tags
           Name="json:&quot;name&quot;"/>
     </variables>
+    <variables
+        Name="TypeId">
+      <tags
+          Name="json:&quot;typeId&quot;"/>
+    </variables>
+    <variables
+        Name="Phone"
+        Type="int">
+      <tags
+          Name="json:&quot;phone&quot;"/>
+    </variables>
+    <variables
+        Name="Address">
+      <tags
+          Name="json:&quot;address&quot;"/>
+    </variables>
+    <variables
+        Name="Email">
+      <tags
+          Name="json:&quot;email&quot;"/>
+    </variables>
+    <variables
+        Name="ClinicalData">
+      <tags
+          Name="json:&quot;clinicalData&quot;"/>
+    </variables>
   </structs>
   <functions
       Name="CreatePatient"
@@ -33,10 +59,21 @@
         Name="ctx"
         Type="contractapi.TransactionContextInterface"/>
     <parameters
-        Name="patientID"/>
+        Name="ID"/>
     <parameters
-        Name="name"/>
-    <typefunction
+        Name="Name"/>
+    <parameters
+        Name="TypeId"/>
+    <parameters
+        Name="Phone"
+        Type="int"/>
+    <parameters
+        Name="Address"/>
+    <parameters
+        Name="Email"/>
+    <parameters
+        Name="ClinicalData"/>
+    <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
   </functions>
@@ -47,8 +84,8 @@
         Name="ctx"
         Type="contractapi.TransactionContextInterface"/>
     <parameters
-        Name="patientID"/>
-    <typefunction
+        Name="ID"/>
+    <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
   </functions>
@@ -59,10 +96,10 @@
         Name="ctx"
         Type="contractapi.TransactionContextInterface"/>
     <parameters
-        Name="patientID"/>
+        Name="ID"/>
     <parameters
-        Name="name"/>
-    <typefunction
+        Name="ClinicalData"/>
+    <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
   </functions>
@@ -73,21 +110,26 @@
         Name="ctx"
         Type="contractapi.TransactionContextInterface"/>
     <parameters
-        Name="patientID"/>
-    <typefunction
+        Name="ID"/>
+    <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
   </functions>
   <functions
-      Name="QueryPatient"
+      Name="ReadPatient"
       ReturnType="*Patient, error">
     <parameters
         Name="ctx"
         Type="contractapi.TransactionContextInterface"/>
     <parameters
-        Name="patientID"/>
-    <typefunction
+        Name="ID"/>
+    <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
+  </functions>
+  <functions
+      Name="main">
+    <localvariables
+        Name="EHRContract"/>
   </functions>
 </hyperledgerGo:SmartContract>

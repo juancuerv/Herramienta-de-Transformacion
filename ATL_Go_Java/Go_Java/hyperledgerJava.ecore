@@ -72,7 +72,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeFunction">
     <eLiterals name="String"/>
-    <eLiterals name="Double" value="2"/>
+    <eLiterals name="Double" value="1"/>
     <eLiterals name="void" value="2"/>
     <eLiterals name="boolean" value="3"/>
   </eClassifiers>
