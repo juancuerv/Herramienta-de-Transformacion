@@ -1,4 +1,4 @@
-# Tesis
+# Herramienta de Transformación
 Este repositorio contiene archivos relacionados con la implementación de transformaciones modelo a modelo (M2M) y modelo a texto (M2T) entre modelos Go y Java utilizando ATL.
 
 ## Carpetas
