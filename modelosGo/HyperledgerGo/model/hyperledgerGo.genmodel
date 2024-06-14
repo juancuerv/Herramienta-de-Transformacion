@@ -16,6 +16,11 @@
       <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/bool"/>
       <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/byte"/>
       <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/contractapi.TransactionContextInterface"/>
+      <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/rune"/>
+      <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/int64"/>
+      <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/float32"/>
+      <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/[]int"/>
+      <genEnumLiterals ecoreEnumLiteral="hyperledgerGo.ecore#//TypeVariable/[]string"/>
     </genEnums>
     <genClasses ecoreClass="hyperledgerGo.ecore#//SmartContract">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hyperledgerGo.ecore#//SmartContract/SCName"/>
@@ -35,7 +40,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hyperledgerGo.ecore#//Function/Instructions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/localvariables"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/typefunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hyperledgerGo.ecore#//Function/typefunctions"/>
     </genClasses>
     <genClasses ecoreClass="hyperledgerGo.ecore#//Import"/>
     <genClasses ecoreClass="hyperledgerGo.ecore#//Package"/>

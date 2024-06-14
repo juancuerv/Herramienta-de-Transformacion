@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hyperledgerJava:SmartContract
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:hyperledgerJava="http://www.example.org/hyperledgerJava"
+    xsi:schemaLocation="http://www.example.org/hyperledgerJava hyperledgerJava.ecore"
+    SCName="EHRContract">
+  <packages
+      Name="org.example"/>
+  <contracts
+      Name="ehr">
+    <informations
+        Title="ehr"
+        Version="1">
+      <contacts
+          Email="j@gmail.com"
+          Name="Juan"
+          UrlContact="ehr.com"/>
+      <licenses
+          Name="apache"
+          UrlLicense="apache.com"/>
+    </informations>
+  </contracts>
+  <transactions
+      Name="EHRAssetExists">
+    <parameters
+        Name="ctx"
+        typeVariable="Context"/>
+    <parameters
+        Name="ID"/>
+  </transactions>
+  <transactions
+      Name="createEHRAsset"
+      TypeFunc="void"
+      isVoid="true">
+    <parameters
+        Name="ctx"
+        typeVariable="Context"/>
+    <parameters
+        Name="ID"/>
+    <parameters
+        Name="name"/>
+    <parameters
+        Name="data"
+        typeVariable="String[]"/>
+  </transactions>
+  <transactions
+      Name="readEHRAsset"
+      Return="asset"
+      objectReturn="EHRAsset">
+    <parameters
+        Name="ctx"
+        typeVariable="Context"/>
+    <parameters
+        Name="ID"/>
+  </transactions>
+  <assets Name="EHRAsset">
+    <properties
+        Name="name"/>
+    <properties
+        Name="Data"
+        typeVariable="String[]"/>
+  </assets>
+</hyperledgerJava:SmartContract>

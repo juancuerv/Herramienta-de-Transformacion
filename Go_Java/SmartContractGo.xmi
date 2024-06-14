@@ -21,33 +21,33 @@
           Name="json:&quot;ID&quot;"/>
     </variables>
     <variables
-        Name="name">
+        Name="Name">
       <tags
           Name="json:&quot;name&quot;"/>
     </variables>
     <variables
-        Name="typeId">
+        Name="TypeId">
       <tags
           Name="json:&quot;typeId&quot;"/>
     </variables>
     <variables
-        Name="phone"
+        Name="Phone"
         Type="int">
       <tags
           Name="json:&quot;phone&quot;"/>
     </variables>
     <variables
-        Name="address">
+        Name="Address">
       <tags
           Name="json:&quot;address&quot;"/>
     </variables>
     <variables
-        Name="email">
+        Name="Email">
       <tags
           Name="json:&quot;email&quot;"/>
     </variables>
     <variables
-        Name="clinicalData">
+        Name="ClinicalData">
       <tags
           Name="json:&quot;clinicalData&quot;"/>
     </variables>
@@ -61,18 +61,18 @@
     <parameters
         Name="ID"/>
     <parameters
-        Name="name"/>
+        Name="Name"/>
     <parameters
-        Name="typeId"/>
+        Name="TypeId"/>
     <parameters
-        Name="phone"
+        Name="Phone"
         Type="int"/>
     <parameters
-        Name="address"/>
+        Name="Address"/>
     <parameters
-        Name="email"/>
+        Name="Email"/>
     <parameters
-        Name="clinicalData"/>
+        Name="ClinicalData"/>
     <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
@@ -98,7 +98,7 @@
     <parameters
         Name="ID"/>
     <parameters
-        Name="clinicalData"/>
+        Name="ClinicalData"/>
     <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
@@ -116,7 +116,7 @@
         StructName="EHRContract"/>
   </functions>
   <functions
-      Name="QueryPatient"
+      Name="ReadPatient"
       ReturnType="*Patient, error">
     <parameters
         Name="ctx"
@@ -126,5 +126,10 @@
     <typefunctions
         VarName="ec"
         StructName="EHRContract"/>
+  </functions>
+  <functions
+      Name="main">
+    <localvariables
+        Name="EHRContract"/>
   </functions>
 </hyperledgerGo:SmartContract>

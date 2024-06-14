@@ -5,7 +5,7 @@
 [template public generateAsset(a1 : Asset)]
 [comment @main/]
 [file (a1.Name.concat('.java'), false, 'UTF-8')]
-[if (a1.packages.Name.oclIsUndefined())]package default;[else]package [a1.packages.Name/];[/if]
+[if (a1.packages.Name.oclIsUndefined())]package org.example;[else]package [a1.packages.Name/];[/if]
 
 import org.hyperledger.fabric.contract.annotation.Contract;
 import org.hyperledger.fabric.contract.annotation.DataType;
