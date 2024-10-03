@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sclang:SContract
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sclang="http://www.example.org/sclang"
+    xsi:schemaLocation="http://www.example.org/sclang sclang.ecore"
+    scName="EHR">
+  <element xsi:type="sclang:Asset"
+      name="Patient"
+      type="">
+    <element
+        xsi:type="sclang:Parameter"
+        name="id"
+        type="String"
+        identifier="true"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="name"
+        type="String"/>
+  </element>
+  <element xsi:type="sclang:Transaction"
+      name="createPatient">
+    <element
+        xsi:type="sclang:Parameter"
+        name="id"
+        type="string"
+        identifier="true"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="name"
+        type="string"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="ctx"
+        list=""
+        type="contractapi.TransactionContextInterface"/>
+  </element>
+  <element xsi:type="sclang:Transaction"
+      name="deletePatient">
+    <element
+        xsi:type="sclang:Parameter"
+        name="id"
+        type="string"
+        identifier="true"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="ctx"
+        list=""
+        type="contractapi.TransactionContextInterface"/>
+  </element>
+  <element xsi:type="sclang:Transaction"
+      name="updatePatient">
+    <element
+        xsi:type="sclang:Parameter"
+        name="id"
+        type="string"
+        identifier="true"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="name"
+        type="string"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="ctx"
+        list=""
+        type="contractapi.TransactionContextInterface"/>
+  </element>
+  <element xsi:type="sclang:Transaction"
+      name="readPatient">
+    <element
+        xsi:type="sclang:Parameter"
+        name="id"
+        type="string"
+        identifier="true"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="name"
+        type="string"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="ctx"
+        list=""
+        type="contractapi.TransactionContextInterface"/>
+  </element>
+  <element xsi:type="sclang:Transaction"
+      name="patientExists">
+    <element
+        xsi:type="sclang:Parameter"
+        name="id"
+        type="string"
+        identifier="true"/>
+    <element
+        xsi:type="sclang:Parameter"
+        name="ctx"
+        list=""
+        type="contractapi.TransactionContextInterface"/>
+  </element>
+</sclang:SContract>

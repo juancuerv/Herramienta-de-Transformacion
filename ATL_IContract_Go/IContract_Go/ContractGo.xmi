@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hyperledgerGo:SmartContract xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hyperledgerGo="http://www.example.org/hyperledgerGo" xsi:schemaLocation="http://www.example.org/hyperledgerGo hyperledgerGo.ecore" xmi:id="a1" SCName="EHR" FileName="EHR">
+  <packages xsi:type="hyperledgerGo:Package" xmi:id="a2" Name="main" Description="Paquete principal"/>
+  <imports xsi:type="hyperledgerGo:Import" xmi:id="a3" Name="github.com/hyperledger/fabric-contract-api-go/contractapi" Description="Libreria de Hyperledger Fabric"/>
+  <structs xsi:type="hyperledgerGo:Struct" xmi:id="a4" Name="Contract">
+    <variables xsi:type="hyperledgerGo:VariableStruct" xmi:id="a5" Name="contractapi.Contract" IsAnonym="true"/>
+  </structs>
+  <structs xsi:type="hyperledgerGo:Struct" xmi:id="a6" Name="Patient">
+    <variables xsi:type="hyperledgerGo:VariableStruct" xmi:id="a7" Name="id">
+      <tags xsi:type="hyperledgerGo:Tag" xmi:id="a8" Name="json:&quot;id&quot;"/>
+    </variables>
+    <variables xsi:type="hyperledgerGo:VariableStruct" xmi:id="a9" Name="name">
+      <tags xsi:type="hyperledgerGo:Tag" xmi:id="a10" Name="json:&quot;name&quot;"/>
+    </variables>
+  </structs>
+  <functions xsi:type="hyperledgerGo:Function" xmi:id="a11" Name="readPatient">
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a12" Name="id"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a13" Name="name"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a14" Name="ctx" Type="contractapi.TransactionContextInterface"/>
+    <typefunctions xsi:type="hyperledgerGo:TypeFunction" xmi:id="a15" VarName="c" StructName="Contract"/>
+  </functions>
+  <functions xsi:type="hyperledgerGo:Function" xmi:id="a16" Name="deletePatient">
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a17" Name="id"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a18" Name="ctx" Type="contractapi.TransactionContextInterface"/>
+    <typefunctions xsi:type="hyperledgerGo:TypeFunction" xmi:id="a19" VarName="c" StructName="Contract"/>
+  </functions>
+  <functions xsi:type="hyperledgerGo:Function" xmi:id="a20" Name="patientExists">
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a21" Name="id"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a22" Name="ctx" Type="contractapi.TransactionContextInterface"/>
+    <typefunctions xsi:type="hyperledgerGo:TypeFunction" xmi:id="a23" VarName="c" StructName="Contract"/>
+  </functions>
+  <functions xsi:type="hyperledgerGo:Function" xmi:id="a24" Name="updatePatient">
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a25" Name="id"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a26" Name="name"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a27" Name="ctx" Type="contractapi.TransactionContextInterface"/>
+    <typefunctions xsi:type="hyperledgerGo:TypeFunction" xmi:id="a28" VarName="c" StructName="Contract"/>
+  </functions>
+  <functions xsi:type="hyperledgerGo:Function" xmi:id="a29" Name="createPatient">
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a30" Name="id"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a31" Name="name"/>
+    <parameters xsi:type="hyperledgerGo:Parameter" xmi:id="a32" Name="ctx" Type="contractapi.TransactionContextInterface"/>
+    <typefunctions xsi:type="hyperledgerGo:TypeFunction" xmi:id="a33" VarName="c" StructName="Contract"/>
+  </functions>
+</hyperledgerGo:SmartContract>
