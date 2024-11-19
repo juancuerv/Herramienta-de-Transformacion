@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/sclang/src-gen" creationIcons="false" editDirectory="/sclang.edit/src-gen"
+    editorDirectory="/sclang.editor/src-gen" modelPluginID="sclang" modelName="Sclang"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>sclang.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Sclang" disposableProviderFactory="true" ecorePackage="sclang.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sclang.ecore#//TargetedPlatform">
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TargetedPlatform/IBM"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TargetedPlatform/Azure"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TargetedPlatform/Ethereum"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TargetedPlatform/DAML"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sclang.ecore#//ParType">
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/integer"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/long"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/double"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/datetime"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/address"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/array"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/contract"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/money"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//ParType/state"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sclang.ecore#//TranType">
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TranType/Default"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TranType/Transfer"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TranType/Set"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TranType/Get"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//TranType/Mathematical"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sclang.ecore#//MathFunctions">
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//MathFunctions/Add"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//MathFunctions/Subtract"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//MathFunctions/Multiply"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//MathFunctions/Divide"/>
+      <genEnumLiterals ecoreEnumLiteral="sclang.ecore#//MathFunctions/Mod"/>
+    </genEnums>
+    <genClasses ecoreClass="sclang.ecore#//Asset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Asset/type"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/participant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/create"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/read"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/update"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/delete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/resource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/allow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/deny"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/allresource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/all"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Rule/transaction"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Parameter/identifier"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Transaction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//Transaction/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//Transaction/operation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sclang.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Element/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//Element/relationship"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//Element/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Element/list"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Participant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Participant/creator"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//ContractLanguage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//ContractLanguage/conLanName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//ContractLanguage/scontract"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//SContract">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//SContract/scName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//SContract/targetPlatform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//SContract/element"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Relationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Relationship/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sclang.ecore#//Relationship/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sclang.ecore#//Relationship/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//Relationship/events"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Events">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Events/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Events/name"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Pre"/>
+    <genClasses ecoreClass="sclang.ecore#//Post"/>
+    <genClasses ecoreClass="sclang.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Condition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Condition/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//AssetRel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//AssetRel/participant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//AssetRel/create"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//AssetRel/read"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//AssetRel/update"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//AssetRel/delete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//AssetRel/all"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//TranRel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//TranRel/selected"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Variable/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Variable/aux"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Variable/aux2"/>
+    </genClasses>
+    <genClasses ecoreClass="sclang.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sclang.ecore#//Operation/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sclang.ecore#//Operation/variable"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ethereumSolidity:SmartContract xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ethereumSolidity="http://www.example.org/ethereumSolidity" xsi:schemaLocation="http://www.example.org/ethereumSolidity ethereumSolidity.ecore" xmi:id="a1" SCName="EHR" FileName="EHR" PragmaSolidity="^0.8.4">
+  <primitivetypes xsi:type="ethereumSolidity:PrimitiveType" xmi:id="a2" NamePPal="id"/>
+  <primitivetypes xsi:type="ethereumSolidity:PrimitiveType" xmi:id="a3" NamePPal="idPatient"/>
+  <primitivetypes xsi:type="ethereumSolidity:PrimitiveType" xmi:id="a4" NamePPal="name"/>
+  <assets xsi:type="ethereumSolidity:Asset" xmi:id="a5" NameA="Patient"/>
+  <structs xsi:type="ethereumSolidity:Struct" xmi:id="a6" NameS="Patient">
+    <structmembers xsi:type="ethereumSolidity:StructMember" xmi:id="a7" type="a2"/>
+    <structmembers xsi:type="ethereumSolidity:StructMember" xmi:id="a8" type="a3"/>
+    <structmembers xsi:type="ethereumSolidity:StructMember" xmi:id="a9" type="a4"/>
+  </structs>
+  <globalfunctions xsi:type="ethereumSolidity:GlobalFunction" xmi:id="a10" Instructions="" NameF="deletePatient">
+    <functionparameters xsi:type="ethereumSolidity:FunctionParameter" xmi:id="a11" NameFP="id" type="a2"/>
+  </globalfunctions>
+  <globalfunctions xsi:type="ethereumSolidity:GlobalFunction" xmi:id="a12" Instructions="" NameF="createPatient">
+    <functionparameters xsi:type="ethereumSolidity:FunctionParameter" xmi:id="a13" NameFP="idPatient" type="a3"/>
+    <functionparameters xsi:type="ethereumSolidity:FunctionParameter" xmi:id="a14" NameFP="name" type="a4"/>
+  </globalfunctions>
+  <globalfunctions xsi:type="ethereumSolidity:GlobalFunction" xmi:id="a15" Instructions="" NameF="readPatient" TypeFunction="view">
+    <functionparameters xsi:type="ethereumSolidity:FunctionParameter" xmi:id="a16" NameFP="id" type="a2"/>
+    <returns xsi:type="ethereumSolidity:Return" xmi:id="a17" NameR="id" type="a2"/>
+  </globalfunctions>
+  <globalfunctions xsi:type="ethereumSolidity:GlobalFunction" xmi:id="a18" Instructions="" NameF="patientExists">
+    <functionparameters xsi:type="ethereumSolidity:FunctionParameter" xmi:id="a19" NameFP="id" type="a2"/>
+  </globalfunctions>
+  <globalfunctions xsi:type="ethereumSolidity:GlobalFunction" xmi:id="a20" Instructions="" NameF="updatePatient">
+    <functionparameters xsi:type="ethereumSolidity:FunctionParameter" xmi:id="a21" NameFP="id" type="a2"/>
+    <functionparameters xsi:type="ethereumSolidity:FunctionParameter" xmi:id="a22" NameFP="name" type="a4"/>
+  </globalfunctions>
+  <constructors xsi:type="ethereumSolidity:User" xmi:id="a23" NameU="Patient"/>
+</ethereumSolidity:SmartContract>
